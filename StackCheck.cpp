@@ -24,15 +24,15 @@ void Stack::push(int addValue){
     return;
   }
   stackArray[++top] = addValue;
-}
+} //end of push function
 
 char Stack::pop(){
   if(top < 0){
     cout << "There is no element in this stack!\n";
     return 0;
-  }
+   }
   return stackArray[top--];
-}
+} //end of pop function
 
 char Stack::peek(){
   if(top < 0){
@@ -40,11 +40,11 @@ char Stack::peek(){
     return 0;
   }
   return stackArray[top];
-  }
+} //end of peek function
 
 bool Stack::isEmpty(){
   return (top < 0);
-}
+} //end of isEmpty function
 
 bool Balanced(const string& input){
   Stack s;
@@ -62,7 +62,7 @@ bool Balanced(const string& input){
     }
   }
   return s.isEmpty();
-}
+} //end of Balanced function
 
 int main(int argc, char** argv) {
   
@@ -78,7 +78,8 @@ int main(int argc, char** argv) {
   if(!inFile.is_open()){
     cout << "Error, cannot open input file: " << inputFile << endl;
     return 1;
-  }
+  } //end of if statement
+  
   string inputString;
   getline(inFile, inputString);
   inFile.close();
@@ -88,9 +89,9 @@ int main(int argc, char** argv) {
   if(!outFile.is_open()){
     cout << "Error, cannot open output file: " << endl;
     return 1;
-  }
+  } //end of if statement
   outFile << (result ? "true" : "false") << endl; 
-  outFile.close();
+  outFile.close();                   //close file
   
   return 0;
   
